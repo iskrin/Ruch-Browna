@@ -20,4 +20,5 @@ $$S_t = S_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma W_t\right
 * **Zbieżność**: Średnia empiryczna z symulacji Monte Carlo wykazuje silną zbieżność z teoretyczną wartością oczekiwaną $E[S_t] = S_0 e^{\mu t}$, co weryfikuje poprawność algorytmu.
 * **Efektywność**: Zastosowanie wektoryzacji w NumPy pozwala na generowanie $10^5$ ścieżek w czasie rzeczywistym.
 
+## 📈 Wizualizacja
 ![Geometric Brownian Motion Simulation](assets/chart.png)
