@@ -1,24 +1,24 @@
 # Stochastic Simulation: Geometric Brownian Motion
 
-## Cel projektu
-Implementacja modelu **Geometrycznego Ruchu Browna (GBM)** służącego do modelowania cen aktywów finansowych. Projekt łączy teorię procesów stochastycznych z wydajnymi obliczeniami w środowisku Python.
+## Project Objective
+Implementation of the **Geometric Brownian Motion (GBM)** model used for modeling financial asset prices. The project combines the theory of stochastic processes with efficient computations in the Python environment.
 
-## Technologie
-* **Python / NumPy**: Pełna wektoryzacja obliczeń macierzowych (eliminacja pętli `for`).
-* **Matplotlib**: Zaawansowana wizualizacja ścieżek cenowych oraz rozkładów brzegowych.
+## Technologies
+* **Python / NumPy**: Full vectorization of matrix computations (elimination of `for` loops).
+* **Matplotlib**: Advanced visualization of price paths and marginal distributions.
 
-## Model Matematyczny
-Symulacja opiera się na rozwiązaniu stochastycznego równania różniczkowego (SDE):
+## Mathematical Model
+The simulation is based on the solution of the stochastic differential equation (SDE):
 $$dS_t = \mu S_t dt + \sigma S_t dW_t$$
 
-W projekcie wykorzystano rozwiązanie w formie zamkniętej:
+The project utilizes the closed-form solution:
 $$S_t = S_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma W_t\right)$$
 
-## Kluczowe wnioski (Insights)
-* **Rozkład końcowy**: Symulacje potwierdzają, że ceny końcowe $S_T$ podlegają **rozkładowi log-normalnemu**, co wynika z addytywności logarytmicznych stóp zwrotu.
-* **Wpływ zmienności**: Wzrost parametru $\sigma$ zwiększa dyspersję wyników i przesuwa medianę rozkładu poniżej wartości oczekiwanej (efekt członu $-\frac{1}{2}\sigma^2$).
-* **Zbieżność**: Średnia empiryczna z symulacji Monte Carlo wykazuje silną zbieżność z teoretyczną wartością oczekiwaną $E[S_t] = S_0 e^{\mu t}$, co weryfikuje poprawność algorytmu.
-* **Efektywność**: Zastosowanie wektoryzacji w NumPy pozwala na generowanie $10^5$ ścieżek w czasie rzeczywistym.
+## Key Insights
+* **Terminal Distribution**: Simulations confirm that the terminal prices $S_T$ follow a **log-normal distribution**, which results from the additivity of logarithmic returns.
+* **Impact of Volatility**: An increase in the $\sigma$ parameter increases the dispersion of results and shifts the median of the distribution below the expected value (the effect of the $-\frac{1}{2}\sigma^2$ term).
+* **Convergence**: The empirical mean from the Monte Carlo simulation shows strong convergence to the theoretical expected value $E[S_t] = S_0 e^{\mu t}$, which verifies the correctness of the algorithm.
+* **Efficiency**: The use of vectorization in NumPy allows for generating $10^5$ paths in real time.
 
-## Wizualizacja
+## Visualization
 ![Geometric Brownian Motion Simulation](assets/chart.png)
